@@ -6,9 +6,9 @@
     @csrf
     @method('patch')
         <label for="title">Title</label>
-        <input type="text" name="title" value="{{ $project->title }}">
+        <input type="text" name="title" value="{{ $project->title }}" required>
         <label for="description">Description</label>
-        <input type="text" name="Description" value="{{ $project->description }}">
+        <input type="text" name="Description" value="{{ $project->description }}" required>
         <button class="btn" type="submit">Submit</button>
     
     </form>

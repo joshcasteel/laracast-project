@@ -6,7 +6,7 @@
         <ul>
             @foreach ($projects as $project)
             
-            <a href="/projects/{{ $project->id }}/edit">    
+            <a href="/projects/{{ $project->id }}">    
             <li class="card-panel">{{ $project->title }}</li>
             </a>
             
