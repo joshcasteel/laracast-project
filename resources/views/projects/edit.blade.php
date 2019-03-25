@@ -17,6 +17,16 @@
         @method('delete')
         <button class="btn red" type="submit">Delete</button>
     </form>    
-    </div>    
-
+    </div>
+    
+    @if ($project->tasks->count())
+        <div class="container">
+            <h5>Tasks</h5>
+            <ol>
+                @foreach ($project->tasks as $task)
+                    <li>{{ $task->description }}</li>
+                @endforeach
+            </ol>
+        </div>
+    @endif
 @endsection
