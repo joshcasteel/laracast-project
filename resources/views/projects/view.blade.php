@@ -14,9 +14,11 @@
         <div class="container card-panel">
             <h5>Tasks:</h5> 
             @foreach ($project->tasks as $task)
-                <form action="/tasks/{{ $task->id }}" method="post">
+                <form action="/completed-tasks/{{ $task->id }}" method="post">
                 @csrf
-                @method('patch')
+                @if ($task->completed())
+                    @method('delete')
+                @endif
                 <p>
                     <label>
                         <input type="checkbox" name="completed" onChange="this.form.submit()" {{ $task->completed ? 'checked' : '' }}/>
